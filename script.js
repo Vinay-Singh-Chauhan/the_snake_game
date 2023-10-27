@@ -28,9 +28,13 @@ snake = {
     drawSnake: function () {
         pen.fillStyle = this.color;
         // console.log(this.cells);
+        head_x=this.cells[this.cells.length-1].x
+        head_y=this.cells[this.cells.length-1].y
         for (let i = 0; i < this.cells.length; i++) {
             pen.fillRect(this.cells[i].x * cell_size, this.cells[i].y * cell_size, cell_size, cell_size);
         }
+        pen.fillStyle='brown'
+        pen.fillRect(head_x * cell_size, head_y * cell_size, cell_size, cell_size);
 
     },
     updateSnake: function () {
